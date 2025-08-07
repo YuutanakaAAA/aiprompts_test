@@ -82,12 +82,13 @@ export default function Home() {
           <h2 className="text-3xl font-bold text-white text-center mb-8">サイト目次</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {[
-              { title: "ホーム", description: "メインページ", image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400" },
-              { title: "プロンプト集", description: "AI画像生成用プロンプト", image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400" },
-              { title: "カテゴリ", description: "ジャンル別分類", image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=400" },
-              { title: "チュートリアル", description: "使い方ガイド", image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400" },
-              { title: "お問い合わせ", description: "サポート・連絡", image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400" }
+              { title: "Expression", description: "表情のプロンプト", image: "https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=400", link: "/expression" },
+              { title: "プロンプト集", description: "AI画像生成用プロンプト", image: "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=400", link: "/" },
+              { title: "カテゴリ", description: "ジャンル別分類", image: "https://images.pexels.com/photos/1181677/pexels-photo-1181677.jpeg?auto=compress&cs=tinysrgb&w=400", link: "/" },
+              { title: "チュートリアル", description: "使い方ガイド", image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400", link: "/" },
+              { title: "お問い合わせ", description: "サポート・連絡", image: "https://images.pexels.com/photos/1181298/pexels-photo-1181298.jpeg?auto=compress&cs=tinysrgb&w=400", link: "/" }
             ].map((page, index) => (
+              <Link href={page.link}>
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer bg-white border-white/20 hover:border-white/40 overflow-hidden">
                 <CardContent className="p-0">
                   <div className="relative h-48 overflow-hidden">
@@ -103,17 +104,20 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="p-4">
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="w-full border-green-600 text-green-800 bg-white hover:bg-green-50 hover:border-green-700 transition-all duration-300"
-                    >
-                      詳細を見る
-                      <ExternalLink className="w-3 h-3 ml-2" />
-                    </Button>
+                    
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="w-full border-green-600 text-green-800 bg-white hover:bg-green-50 hover:border-green-700 transition-all duration-300"
+                      >
+                        詳細を見る
+                        <ExternalLink className="w-3 h-3 ml-2" />
+                      </Button>
+                    
                   </div>
                 </CardContent>
               </Card>
+              </Link>
             ))}
           </div>
         </section>

@@ -24,7 +24,7 @@ const PaginationDots = ({ total, current }: { total: number; current: number }) 
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = 5;
+  const totalPages = 4;
 
   // アニメーション用の状態
   const [animateHero, setAnimateHero] = useState(false);
